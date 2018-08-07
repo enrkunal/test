@@ -1,0 +1,10 @@
+applications:
+- name: user-producer
+  disk_quota: 512M
+  instances: 1
+  memory: 650M
+  path: ./target/user-producer-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack
+  routes:
+  - route: user-producer.cfapps.io
+  stack: cflinuxfs2

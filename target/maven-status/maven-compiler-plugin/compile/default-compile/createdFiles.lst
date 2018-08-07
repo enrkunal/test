@@ -1,0 +1,3 @@
+com\deloitte\userRegistration\entity\User.class
+com\deloitte\userRegistration\UserRegistrationApplication.class
+com\deloitte\userRegistration\controller\UserController.class
