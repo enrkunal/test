@@ -1,15 +1,11 @@
 package com.deloitte.userConsumer.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClientException;
@@ -31,7 +27,7 @@ public class ConsumerController {
 		ServiceInstance serviceInstance=instances.get(0);
 		String baseUrl=serviceInstance.getUri().toString();
 		baseUrl=baseUrl+"/users";
-		List<User> users = this.restTemplate.getForObject(baseUrl, List.class);
+		List<User> users = (new RestTemplate()).getForObject(baseUrl, List.class);
 	    return users;
 	}
 	
