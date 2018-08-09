@@ -18,7 +18,7 @@ public class ConsumerController {
 	@Autowired
 	RestTemplate restTemplate;
 
-	@Autowired
+	/*@Autowired
 	private DiscoveryClient discoveryClient;
 	
 	@RequestMapping("/client/usersA")
@@ -29,11 +29,11 @@ public class ConsumerController {
 		baseUrl=baseUrl+"/users";
 		List<User> users = (new RestTemplate()).getForObject(baseUrl, List.class);
 	    return users;
-	}
+	}*/
 	
 	@RequestMapping("/client/usersB")
 	public List<User> getUserDetailsB() throws RestClientException, IOException {
-		List<User> users = this.restTemplate.getForObject("http://userRepository-producer/users", List.class);
+		List<User> users = this.restTemplate.getForObject("//user-producer/users", List.class);
 	    return users;
 	}
 	

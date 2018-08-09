@@ -2,10 +2,10 @@
 instances: 1
 memory: 680M
 applications:
-  - name: user-consumer
-    path: ./target/user-consumer-0.0.1-SNAPSHOT.jar
+  - name: user-producer
+    path: ./target/user-producer-0.0.1-SNAPSHOT.jar
     buildpack: java_buildpack
     routes: 
-    - route: user-consumer.cfapps.io
+    - route: user-producer.cfapps.io
     services:
       - kunal-service-registry
